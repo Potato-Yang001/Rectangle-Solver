@@ -7,13 +7,13 @@ export default function App() {
   const [result, setResult] = useState('')
 
   function calArea(area) {
-    area = length * width
-    setResult(area)
+    area = parseInt(length) * parseInt(width)
+    setResult(`The area of the rectangle is ${area} units.`)
   }
 
   function calParimeter(perimeter) {
-    perimeter = 2 * (parseFloat(length) + parseInt(width))
-    setResult(perimeter)
+    perimeter = 2 * (parseInt(length) + parseInt(width))
+    setResult(`The perimeter of the rectangle is ${perimeter} units.`)
   }
 
 
@@ -25,7 +25,7 @@ export default function App() {
       <label>Width: </label>
       <input type="text" value={width} onChange={(event) => setWidth(event.target.value)} />
 
-      <div style={{ display: 'flex', flexDirection: 'column', width: 'auto' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', width: '250px', margin: '10px', gap: '20px' }}>
         <button onClick={calArea}>Get Area</button>
         <button onClick={calParimeter}>Get Perimeter</button>
       </div>
